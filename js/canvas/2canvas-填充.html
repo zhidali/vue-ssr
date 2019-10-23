@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2canvas-填充</title>
+    <style>
+        #ctx {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- width="600" height="400" -->
+    <canvas id="ctx" width="600" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById('ctx');
+        var cvsCtx = canvas.getContext('2d');
+
+        cvsCtx.beginPath();
+        cvsCtx.moveTo(100, 100);
+        cvsCtx.lineTo(100, 200);
+        cvsCtx.lineTo(200, 200);
+        cvsCtx.lineWidth = 20;
+        // cvsCtx.lineTo(100, 100);
+        // 闭合关闭路径
+        cvsCtx.closePath();
+        cvsCtx.stroke();
+        // 设置填充颜色
+        // cvsCtx.fillStyle = 'blue';
+        // 填充
+        // cvsCtx.fill();
+    </script>
+</body>
+
+</html>

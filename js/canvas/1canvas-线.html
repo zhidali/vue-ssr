@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas1</title>
+    <style>
+        #ctx {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- width="600" height="400" -->
+    <canvas id="ctx" width="600" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById('ctx');
+        var cvsCtx = canvas.getContext('2d');
+        // 新起路径
+        cvsCtx.beginPath();
+        // 起始点
+        cvsCtx.moveTo(100, 100);
+        // 到达点（绘制直线）
+        cvsCtx.lineTo(200, 100);
+        // 线宽度
+        cvsCtx.lineWidth = 10;
+        // 线颜色
+        cvsCtx.strokeStyle = 'blue';
+        // 描边
+        cvsCtx.stroke();
+
+
+        cvsCtx.beginPath();
+        cvsCtx.moveTo(100, 200);
+        cvsCtx.lineTo(200, 200);
+        // 设置虚线
+        // [5,10] 数组用来描述虚线的排列方式的
+        // - --   --
+        // 5 10 15 10
+        cvsCtx.setLineDash([5,10,15,10]);
+        // 获取虚线的排列方式
+        // cvsCtx.getLineDash()
+        // 虚线偏移量
+        // cvsCtx.lineDashOffset = '20px';
+        cvsCtx.lineWidth = 1;
+        cvsCtx.strokeStyle = 'red';
+        cvsCtx.stroke();
+    </script>
+</body>
+
+</html>

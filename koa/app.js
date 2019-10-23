@@ -15,14 +15,10 @@ esj(app, {
     cache: false,
     debug: false
 })
-
 router.get('/', ctx => {
     ctx.body = '首页'
 })
-
-
 app.use(router.routes())
-
 router.use('/admin', require('./router/admin'))
 
 app.use(static('./static'))
